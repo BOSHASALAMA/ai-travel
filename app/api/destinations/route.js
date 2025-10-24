@@ -1,4 +1,4 @@
-import { db } from "@/config/db";
+import { getDb } from "@/config/db";
 import { destinations } from "@/config/schema";
 import { NextResponse } from "next/server";
 
@@ -35,7 +35,8 @@ export async function POST(req){
          }
      console.log(" Incoming destination:", newDestination);
 
-     const result = await db.insert(destinations).values(newDestination).returning(destinations)
+  const db = getDb();
+  const result = await db.insert(destinations).values(newDestination).returning(destinations)
 
     console.log("✅ Insert result:", result);
 
@@ -51,6 +52,7 @@ export async function POST(req){
 export async function  GET(req){
 
     try{
+          const db = getDb();
           const destination = await db.select().from(destinations)
 
     return NextResponse.json({success:true,data:destination})

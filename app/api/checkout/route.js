@@ -1,11 +1,11 @@
 import { checkout } from "@/config/schema";
+import { getDb } from "@/config/db";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
     try {
     const data = await req.json()
-    // lazy-load the DB client to avoid creating connections at module import time
-    const { db } = await import("@/config/db");
+  const db = getDb();
             const { firstName, lastName, email,  phone, checkInDate, checkOutDate, travelers, price } = data;
 
            
@@ -35,8 +35,8 @@ export async function POST(req) {
 export async function  GET(req){
 
     try{
-      const { db } = await import("@/config/db");
-      const destination = await db.select().from(checkout)
+  const db = getDb();
+  const destination = await db.select().from(checkout)
 
     return NextResponse.json({success:true,data:destination})
     }catch(error){

@@ -1,4 +1,4 @@
-import { db } from "@/config/db"
+import { getDb } from "@/config/db"
 import { usersTable  } from "@/config/schema"
 import { eq } from "drizzle-orm"
 import { NextResponse } from "next/server"
@@ -8,6 +8,7 @@ import { NextResponse } from "next/server"
 export async function POST(req) {
     const {email , name ,userId} = await req.json()
     
+    const db = getDb();
     const user = await db.select().from(usersTable).where(eq(usersTable.email,email))
     if(user.length==0){
 const result = await db.insert(usersTable).values({
