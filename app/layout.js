@@ -24,17 +24,37 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+  // If the publishable key is missing during build, avoid initializing ClerkProvider
+  // which can throw during prerendering. Prefer setting NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+  // in your Vercel/hosting environment for production builds.
+  if (!publishableKey) {
+    console.warn('Missing NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY — rendering without ClerkProvider');
+    return (
+      <html lang="en">
+        <body className="bg-gray-950">
+          <Header />
+          <Provider>
+            {children}
+          </Provider>
+          <Toaster />
+        </body>
+      </html>
+    );
+  }
+
   return (
-   <ClerkProvider>
-    <html lang="en">
-      <body className="bg-gray-950">
-        <Header/>
-        <Provider>
-        {children}
-        </Provider>
-        <Toaster/>
-      </body>
-    </html>
+    <ClerkProvider publishableKey={publishableKey}>
+      <html lang="en">
+        <body className="bg-gray-950">
+          <Header />
+          <Provider>
+            {children}
+          </Provider>
+          <Toaster />
+        </body>
+      </html>
     </ClerkProvider>
   );
 }
