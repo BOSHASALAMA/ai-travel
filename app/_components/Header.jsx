@@ -92,10 +92,10 @@ const isUser = userRole === 'user'
 {!user ? (
      <div className="hidden ml-14 md:flex items-center gap-4 px-3">
         <SignInButton mode='modal' >
-            <Button variant="header" >Sign In</Button>
+            <Button  >Sign In</Button>
             </SignInButton>
 <SignUpButton>
-           <Button variant="header" >Sign out</Button>
+           <Button  >Sign out</Button>
            </SignUpButton>
 
     </div>
@@ -132,10 +132,10 @@ const isUser = userRole === 'user'
     !user && (
             <div className=" flex gap-4 px-3">
         <SignInButton mode='modal' >
-            <Button variant="header" >Sign In</Button>
+            <Button  >Sign In</Button>
             </SignInButton>
 <SignUpButton>
-           <Button variant="header" >Sign out</Button>
+           <Button  >Sign out</Button>
            </SignUpButton>
 
     </div>

@@ -70,7 +70,7 @@ export default function CheckoutForm({ initial }) {
   };
 
   return (
-    <div className="min-h-screen my-3 bg-gradient-to-br from-slate-800 to-slate-900">
+    <div className="min-h-screen mt-3 bg-gradient-to-br from-slate-800 to-slate-900">
       {/* Header */}
       <div className="bg-slate-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -91,7 +91,7 @@ export default function CheckoutForm({ initial }) {
           {/* Left Section - Booking Details */}
           <div className="lg:col-span-2 space-y-6">
             {/* Trip Details */}
-            <div className="bg-slate-900 rounded-xl p-6 shadow-lg">
+            <div className="bg-slate-900 rounded-xl p-6 shadow-md shadow-blue-900">
               <h2 className="text-2xl font-bold text-gray-200 mb-6 flex items-center">
                 <MapPin className="w-6 h-6 text-blue-600 mr-3" />
                 Trip Details
@@ -148,7 +148,7 @@ export default function CheckoutForm({ initial }) {
             </div>
 
             {/* Personal Information */}
-            <div className="bg-slate-900 rounded-xl p-6 shadow-lg">
+            <div className="bg-slate-900 rounded-xl p-6 shadow-md shadow-blue-900">
               <h2 className="text-2xl font-bold text-gray-200 mb-6">Personal Information</h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -207,7 +207,7 @@ export default function CheckoutForm({ initial }) {
             </div>
 
             {/* Payment Information */}
-            <div className="bg-slate-900 rounded-xl p-6 shadow-lg">
+            <div className="bg-slate-900 rounded-xl p-6 shadow-md shadow-blue-900">
               <h2 className="text-2xl font-bold text-gray-200 mb-6 flex items-center">
                 <CreditCard className="w-6 h-6 text-blue-600 mr-3" />
                 Payment Information
@@ -276,7 +276,7 @@ export default function CheckoutForm({ initial }) {
 
           {/* Right Section - Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-slate-900 rounded-xl p-6 shadow-lg sticky top-24">
+            <div className="bg-slate-900 rounded-xl p-6 shadow-md shadow-blue-900 sticky top-24">
               <h2 className="text-2xl font-bold text-gray-200 mb-6">Order Summary</h2>
 
               {/* Destination Preview */}
