@@ -44,7 +44,7 @@ return(
     <div className='min-h-screen text-white  '>
         <div className='max-w-7xl mx-auto px-4 '>
 <h4 className='font-bold py-5'>Destinations</h4>
-<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-7'>
 {destinations.length>0 ?(
   destinations.map((dest , i)=>(
 <div key={i} className='rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300'>
