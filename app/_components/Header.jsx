@@ -132,10 +132,10 @@ const isUser = userRole === 'user'
     !user && (
             <div className=" flex gap-4 px-3">
         <SignInButton mode='modal' >
-            <Button  >Sign In</Button>
+            <Button className="mb-3" >Sign In</Button>
             </SignInButton>
 <SignUpButton>
-           <Button  >Sign out</Button>
+           <Button className="mb-3" >Sign out</Button>
            </SignUpButton>
 
     </div>

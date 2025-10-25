@@ -12,6 +12,7 @@
     "@neondatabase/serverless": "^1.0.2",
     "@radix-ui/react-slot": "^1.2.3",
     "@tabler/icons-react": "^3.35.0",
+    "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.12.2",
     "class-variance-authority": "^0.7.1",
     "clerk": "^0.8.3",

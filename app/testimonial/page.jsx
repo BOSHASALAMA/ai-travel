@@ -42,7 +42,7 @@ export function AnimatedTestimonialsDemo() {
 }
 export default function TestimonialPage() {
   return (
-    <div className="min-h-screen mt-5 flex flex-col items-center justify-center bg-gray-900 py-20 px-4">
+    <div className="min-h-screen mt-5 flex flex-col items-center justify-center bg-slate-900 py-20 px-4">
       <h1 className="text-4xl font-bold text-white mb-10">What Our Users Say</h1>
       <AnimatedTestimonialsDemo />
     </div>

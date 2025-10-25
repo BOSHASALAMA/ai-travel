@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./_components/Header";
 import {
   ClerkProvider,
@@ -39,6 +40,8 @@ export default function RootLayout({ children }) {
             {children}
           </Provider>
           <Toaster />
+          <SpeedInsights />
+
         </body>
       </html>
     );
