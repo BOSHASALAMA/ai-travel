@@ -6,7 +6,7 @@ import { toast } from 'sonner'
 
 
 const page = () => {
-    
+    const [loading, setLoading] = useState(false)
     const [step, setStep] = useState(1)
     const [imagePreview, setimagePreview] = useState(null)
     
@@ -40,6 +40,7 @@ reader.readAsDataURL(file)
     }
 const handleSubmit = async (e)=>{
 e.preventDefault()
+setLoading(true)
 try {
     const data = new FormData()
     Object.keys(formData).forEach((key)=>{
@@ -71,6 +72,8 @@ try {
 } catch (error) {
     console.log(error)
     toast.error("server error")
+} finally {
+    setLoading(false)
 }
 }
     const nextStep = () =>{
@@ -183,8 +186,16 @@ try {
         </div>
         {
             step === 4 &&(
-<Button type='submit' className='ml-5'>Submit</Button>
- 
+                <Button type='submit' className='ml-5' disabled={loading}>
+                    {loading ? (
+                        <div className="flex items-center">
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                            Submitting...
+                        </div>
+                    ) : (
+                        'Submit'
+                    )}
+                </Button>
             )
         }
     </form>
