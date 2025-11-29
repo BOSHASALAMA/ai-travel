@@ -95,7 +95,7 @@ const isUser = userRole === 'user'
             <Button  >Sign In</Button>
             </SignInButton>
 <SignUpButton>
-           <Button  >Sign out</Button>
+           <Button  >Sign Up</Button>
            </SignUpButton>
 
     </div>
@@ -135,7 +135,7 @@ const isUser = userRole === 'user'
             <Button className="mb-3" >Sign In</Button>
             </SignInButton>
 <SignUpButton>
-           <Button className="mb-3" >Sign out</Button>
+           <Button className="mb-3" >Sign Up</Button>
            </SignUpButton>
 
     </div>
